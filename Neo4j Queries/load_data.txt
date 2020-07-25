@@ -1,0 +1,63 @@
+LOAD CSV WITH HEADERS FROM "file:///loc_lookup.csv" AS loc
+CREATE (l:Location {LocationID: toInteger(loc.LocationID), borough: loc.Borough, zone: loc.Zone, service_zone: loc.service_zone});
+
+LOAD CSV WITH HEADERS FROM "file:///1d_resolution_01.csv" AS row
+MERGE (l1:Location {LocationID: toInteger(row.PULocationID)})
+MERGE (l2:Location {LocationID: toInteger(row.DOLocationID)})
+CREATE (l1)-[:goto {tpep_pickup_datetime:row.tpep_pickup_datetime, passenger_count_mean: toFloat(row.passenger_count_mean), trip_distance_mean: toFloat(row.trip_distance_mean),tip_amount_mean: toFloat(row.tip_amount_mean),total_amount_mean: toFloat(row.total_amount_mean)}]->(l2);
+
+
+LOAD CSV WITH HEADERS FROM "file:///1d_resolution_02.csv" AS row
+MERGE (l1:Location {LocationID: toInteger(row.PULocationID)})
+MERGE (l2:Location {LocationID: toInteger(row.DOLocationID)})
+CREATE (l1)-[:goto {tpep_pickup_datetime:row.tpep_pickup_datetime, passenger_count_mean: toFloat(row.passenger_count_mean), trip_distance_mean: toFloat(row.trip_distance_mean),tip_amount_mean: toFloat(row.tip_amount_mean),total_amount_mean: toFloat(row.total_amount_mean)}]->(l2);
+
+LOAD CSV WITH HEADERS FROM "file:///1d_resolution_03.csv" AS row
+MERGE (l1:Location {LocationID: toInteger(row.PULocationID)})
+MERGE (l2:Location {LocationID: toInteger(row.DOLocationID)})
+CREATE (l1)-[:goto {tpep_pickup_datetime:row.tpep_pickup_datetime, passenger_count_mean: toFloat(row.passenger_count_mean), trip_distance_mean: toFloat(row.trip_distance_mean),tip_amount_mean: toFloat(row.tip_amount_mean),total_amount_mean: toFloat(row.total_amount_mean)}]->(l2);
+
+LOAD CSV WITH HEADERS FROM "file:///1d_resolution_04.csv" AS row
+MERGE (l1:Location {LocationID: toInteger(row.PULocationID)})
+MERGE (l2:Location {LocationID: toInteger(row.DOLocationID)})
+CREATE (l1)-[:goto {tpep_pickup_datetime:row.tpep_pickup_datetime, passenger_count_mean: toFloat(row.passenger_count_mean), trip_distance_mean: toFloat(row.trip_distance_mean),tip_amount_mean: toFloat(row.tip_amount_mean),total_amount_mean: toFloat(row.total_amount_mean)}]->(l2);
+
+LOAD CSV WITH HEADERS FROM "file:///1d_resolution_05.csv" AS row
+MERGE (l1:Location {LocationID: toInteger(row.PULocationID)})
+MERGE (l2:Location {LocationID: toInteger(row.DOLocationID)})
+CREATE (l1)-[:goto {tpep_pickup_datetime:row.tpep_pickup_datetime, passenger_count_mean: toFloat(row.passenger_count_mean), trip_distance_mean: toFloat(row.trip_distance_mean),tip_amount_mean: toFloat(row.tip_amount_mean),total_amount_mean: toFloat(row.total_amount_mean)}]->(l2);
+
+LOAD CSV WITH HEADERS FROM "file:///1d_resolution_06.csv" AS row
+MERGE (l1:Location {LocationID: toInteger(row.PULocationID)})
+MERGE (l2:Location {LocationID: toInteger(row.DOLocationID)})
+CREATE (l1)-[:goto {tpep_pickup_datetime:row.tpep_pickup_datetime, passenger_count_mean: toFloat(row.passenger_count_mean), trip_distance_mean: toFloat(row.trip_distance_mean),tip_amount_mean: toFloat(row.tip_amount_mean),total_amount_mean: toFloat(row.total_amount_mean)}]->(l2);
+
+LOAD CSV WITH HEADERS FROM "file:///1d_resolution_07.csv" AS row
+MERGE (l1:Location {LocationID: toInteger(row.PULocationID)})
+MERGE (l2:Location {LocationID: toInteger(row.DOLocationID)})
+CREATE (l1)-[:goto {tpep_pickup_datetime:row.tpep_pickup_datetime, passenger_count_mean: toFloat(row.passenger_count_mean), trip_distance_mean: toFloat(row.trip_distance_mean),tip_amount_mean: toFloat(row.tip_amount_mean),total_amount_mean: toFloat(row.total_amount_mean)}]->(l2);
+
+LOAD CSV WITH HEADERS FROM "file:///1d_resolution_08.csv" AS row
+MERGE (l1:Location {LocationID: toInteger(row.PULocationID)})
+MERGE (l2:Location {LocationID: toInteger(row.DOLocationID)})
+CREATE (l1)-[:goto {tpep_pickup_datetime:row.tpep_pickup_datetime, passenger_count_mean: toFloat(row.passenger_count_mean), trip_distance_mean: toFloat(row.trip_distance_mean),tip_amount_mean: toFloat(row.tip_amount_mean),total_amount_mean: toFloat(row.total_amount_mean)}]->(l2);
+
+LOAD CSV WITH HEADERS FROM "file:///1d_resolution_09.csv" AS row
+MERGE (l1:Location {LocationID: toInteger(row.PULocationID)})
+MERGE (l2:Location {LocationID: toInteger(row.DOLocationID)})
+CREATE (l1)-[:goto {tpep_pickup_datetime:row.tpep_pickup_datetime, passenger_count_mean: toFloat(row.passenger_count_mean), trip_distance_mean: toFloat(row.trip_distance_mean),tip_amount_mean: toFloat(row.tip_amount_mean),total_amount_mean: toFloat(row.total_amount_mean)}]->(l2);
+
+LOAD CSV WITH HEADERS FROM "file:///1d_resolution_10.csv" AS row
+MERGE (l1:Location {LocationID: toInteger(row.PULocationID)})
+MERGE (l2:Location {LocationID: toInteger(row.DOLocationID)})
+CREATE (l1)-[:goto {tpep_pickup_datetime:row.tpep_pickup_datetime, passenger_count_mean: toFloat(row.passenger_count_mean), trip_distance_mean: toFloat(row.trip_distance_mean),tip_amount_mean: toFloat(row.tip_amount_mean),total_amount_mean: toFloat(row.total_amount_mean)}]->(l2);
+
+LOAD CSV WITH HEADERS FROM "file:///1d_resolution_11.csv" AS row
+MERGE (l1:Location {LocationID: toInteger(row.PULocationID)})
+MERGE (l2:Location {LocationID: toInteger(row.DOLocationID)})
+CREATE (l1)-[:goto {tpep_pickup_datetime:row.tpep_pickup_datetime, passenger_count_mean: toFloat(row.passenger_count_mean), trip_distance_mean: toFloat(row.trip_distance_mean),tip_amount_mean: toFloat(row.tip_amount_mean),total_amount_mean: toFloat(row.total_amount_mean)}]->(l2);
+
+LOAD CSV WITH HEADERS FROM "file:///1d_resolution_12.csv" AS row
+MERGE (l1:Location {LocationID: toInteger(row.PULocationID)})
+MERGE (l2:Location {LocationID: toInteger(row.DOLocationID)})
+CREATE (l1)-[:goto {tpep_pickup_datetime:row.tpep_pickup_datetime, passenger_count_mean: toFloat(row.passenger_count_mean), trip_distance_mean: toFloat(row.trip_distance_mean),tip_amount_mean: toFloat(row.tip_amount_mean),total_amount_mean: toFloat(row.total_amount_mean)}]->(l2);
